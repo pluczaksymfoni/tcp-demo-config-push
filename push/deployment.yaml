@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: my-java-app-push
-          image: europe-west2-docker.pkg.dev/tcp-demo/tcp-demo-repo/tcp-demo-app:4949bf0
+          image: europe-west2-docker.pkg.dev/tcp-demo/tcp-demo-repo/tcp-demo-app:4948fe0
           env:
             - name: CD_MODEL
               value: "PUSH MODEL"
