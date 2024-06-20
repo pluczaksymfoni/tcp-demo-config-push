@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-java-app-push
+  namespace: myapp-push
+  labels:
+    app: my-java-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-java-app
+  template:
+    metadata:
+      labels:
+        app: my-java-app
+    spec:
+      containers:
+        - name: my-java-app
+          image: europe-west2-docker.pkg.dev/tcp-demo/tcp-demo-repo/tcp-demo-app:0ba08bf
+          env:
+            - name: CD_MODEL
+              value: "PUSH MODEL"
+            - name: SPRING_PROFILES_ACTIVE
+              value: "k8s"
+          ports:
+            - containerPort: 8080

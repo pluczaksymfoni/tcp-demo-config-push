@@ -1,0 +1,7 @@
+steps:
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+    - run
+    - --filename=/push
+    - --location=europe-west2-c
+    - --cluster=tcp-demo-argo
