@@ -4,19 +4,19 @@ metadata:
   name: my-java-app-push
   namespace: myapp-push
   labels:
-    app: my-java-app
+    app: my-java-app-push
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: my-java-app
+      app: my-java-app-push
   template:
     metadata:
       labels:
-        app: my-java-app
+        app: my-java-app-push
     spec:
       containers:
-        - name: my-java-app
+        - name: my-java-app-push
           image: europe-west2-docker.pkg.dev/tcp-demo/tcp-demo-repo/tcp-demo-app:f9c9e50
           env:
             - name: CD_MODEL
